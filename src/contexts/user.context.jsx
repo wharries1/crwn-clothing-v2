@@ -33,7 +33,7 @@ const userReducer = (state, action) => {
 
 export const UserProvider = ({ children }) => {
   const [{ currentUser }, dispatch] = useReducer(userReducer, INITIAL_STATE);
-
+  
   const setCurrentUser = (user) =>
     dispatch(createAction(USER_ACTION_TYPES.SET_CURRENT_USER, user));
 
@@ -48,7 +48,6 @@ export const UserProvider = ({ children }) => {
     return unsubscribe;
   }, []);
 
-  console.log(currentUser);
 
   const value = {
     currentUser,
